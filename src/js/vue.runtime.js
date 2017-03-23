@@ -6752,6 +6752,6 @@ setTimeout(function () {
   }
 }, 0);
 
-return Vue$2;
+return {default: Vue$2};
 
 })));

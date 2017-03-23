@@ -1,7 +1,6 @@
-declare let require: Function;
-declare let Vue :any;
-
+import Vue from 'vue'
 import App from './app.vue';
+console.log(Vue);
 
 new Vue({
 	el: '#app',

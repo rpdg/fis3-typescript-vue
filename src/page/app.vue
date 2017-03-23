@@ -6,10 +6,15 @@
 		}
 	}
 </style>
+
+
 <template>
 	<h1 class="app" @click="hello">hello world</h1>
 </template>
+
+
 <script lang="typescript">
+	import Vue, { ComponentOptions } from 'vue';
 	let App = {
 		methods: {
 			// type annotation!
@@ -17,6 +22,6 @@
 				alert('hello world')
 			}
 		}
-	};
-	export default App;
+	} as ComponentOptions<Vue>;
+	export default App ;
 </script>

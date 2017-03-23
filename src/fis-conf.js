@@ -81,15 +81,15 @@ fis.hook('commonjs', {
 	baseUrl: './',
 	extList: ['.ts','.vue'],
 	paths: {
-		vue: 'js/vue.js',
+		vue: 'js/vue.runtime.js',
 	}
 });
 
 
-/*fis.match('js/vue.js', {
+fis.match('js/vue.runtime.js', {
 	isMod: true,
 	useSameNameRequire: true,
-});*/
+});
  /*
 fis.unhook('components');
 fis.hook('node_modules');*/
