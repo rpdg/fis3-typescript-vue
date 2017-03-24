@@ -9,16 +9,15 @@
 
 
 <template>
-	<h1 class="app" @click="hello">hello world</h1>
+	<h1 class="app" @click="sayHello">hello world</h1>
 </template>
 
 
-<script lang="typescript">
+<script lang="ts">
 	import Vue, { ComponentOptions } from 'vue';
 	let App = {
 		methods: {
-			// type annotation!
-			hello(): void {
+			sayHello(): void {
 				alert('hello world')
 			}
 		}

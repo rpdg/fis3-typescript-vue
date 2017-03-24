@@ -1,7 +1,7 @@
 fis.set('project.fileType.text', 'ts');
 
 
-fis.match('{**/*.ts,**.vue:typescript}', {
+fis.match('{**/*.ts,**.vue:ts}', {
 	parser: fis.plugin('typescript', {
 		sourceMap: true,
 		strictNullChecks: true,
@@ -16,7 +16,7 @@ fis.match('{**/*.ts,**.vue:typescript}', {
 });
 
 
-fis.match('{/@types/**.*,/comm/**.*}', {
+fis.match('{/@types/**.*,/comm/**.*,/node_modules/**.*}', {
 	release: false
 });
 
@@ -90,6 +90,25 @@ fis.match('js/vue.runtime.js', {
 	isMod: true,
 	useSameNameRequire: true,
 });
+
+
+
+
+fis.match('{**.html,/js/config.js}', {
+	parser: fis.plugin('art-template', {
+		native: false, //默认为false，即简单语法模式
+		openTag: '{{', //默认为{{
+		closeTag: '}}',//默认为}}
+		compress: false,//默认为false
+		define: {
+			'page/': {
+				__layout: '/comm/layout.html',
+			}
+		}
+	})
+});
+
+
  /*
 fis.unhook('components');
 fis.hook('node_modules');*/
